@@ -1,20 +1,18 @@
-/*
-Author URI: http://webthemez.com/
-Note: 
-Licence under Creative Commons Attribution 3.0 
-Do not remove the back-link in this web template 
--------------------------------------------------------*/
+:root {
+  --primary-color: #2c4f7c;
+  --secondary-color: #e84a5f;
+  --text-color: #2c3e50;
+  --light-bg: #f8f9fa;
+  --font-primary: 'Open Sans', sans-serif;
+  --font-heading: 'Montserrat', sans-serif;
+}
 
-@import url('http://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700|Open+Sans:400,600,700'); 
-@import url('font-awesome.css');  
-@import url('animate.css');
-
+/* Base styles */
 body {
-	font-family:'Open Sans', Arial, sans-serif;
-	font-size:14px;
-	font-weight:300;
-	line-height:1.6em;
-	color:#656565;
+  font-family: var(--font-primary);
+  color: var(--text-color);
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
 a:active {
@@ -989,6 +987,20 @@ blockquote cite a:visited 				{ color:#555; }
 background: #318CCA;
 color: #fff;
 border-radius: 0;padding: 10px 30px;}
+.btn-primary {
+  background-color: var(--primary-color);
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
 .btn-theme {
 	color: #fff;
 }
@@ -1714,4 +1726,4 @@ padding-top: 2px;
 
 }
 
- 
+

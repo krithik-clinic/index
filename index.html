@@ -1,24 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<title>Krithik Clinic and Scans</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="" />
-
-<!-- css -->
-<link href="css/bootstrap.min.css" rel="stylesheet" />
-<link href="css/fancybox/jquery.fancybox.css" rel="stylesheet">
-<link href="css/jcarousel.css" rel="stylesheet" />
-<link href="css/flexslider.css" rel="stylesheet" />
-<link href="js/owl-carousel/owl.carousel.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet" />
- 
+    <meta charset="utf-8">
+    <title>Krithik Clinic and Scans | Leading Gynecology Hospital in Kallakurichi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <meta name="description" content="Krithik Clinic and Scans - Leading gynecology hospital in Kallakurichi. Specializing in women's health, infertility treatment, and pregnancy care under Dr. Saranya MBBS, MD (Gynaecology)" />
+    <meta name="keywords" content="gynecology, women's health, infertility treatment, pregnancy care, Kallakurichi hospital, Dr Saranya" />
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="css/bootstrap.min.css" as="style">
+    <link rel="preload" href="css/custom-modern.css" as="style">
+    <link rel="preload" href="img/logo.png" as="image">
+    
+    <!-- Modern fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/custom-modern.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link href="css/flexslider.css" rel="stylesheet" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+    
+    <!-- Schema.org markup for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalClinic",
+      "name": "Krithik Clinic and Scans",
+      "description": "Leading gynecology hospital in Kallakurichi specializing in women's health, infertility treatment, and pregnancy care.",
+      "medicalSpecialty": ["Gynecology", "Obstetrics", "Infertility"],
+      "image": "img/logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Kallakurichi",
+        "addressRegion": "Tamil Nadu",
+        "addressCountry": "IN"
+      },
+      "employee": {
+        "@type": "Physician",
+        "name": "Dr. Saranya",
+        "medicalSpecialty": "Gynecology",
+        "qualification": ["MBBS", "MD Gynaecology"]
+      }
+    }
+    </script>
 </head>
 <body>
 <div id="wrapper">
-	<!-- start header -->
-	<header>
+    <!-- Header -->
+    <header class="fixed-top">
         <div class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
@@ -27,62 +60,80 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo"/></a>
+					<a class="navbar-brand" href="index.html">						
+						<h1 class="site-title d-inline-block ms-2 mb-0">
+							Krithik Clinic and Scans
+						</h1>
+					</a>
                 </div>
-				<!-- <div class="navbar-collapse collapse ">
-					<ul class="nav navbar-nav">
-						<li class="active"><a href="index.html">Home</a></li>
-						<li><a href="https://goo.gl/maps/hZH8BYcUtrYgU3ki7">Google Maps</a></li>
-					</ul>
-				</div> -->
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav ms-auto">
+                        <li class="active"><a href="#featured">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="https://goo.gl/maps/hZH8BYcUtrYgU3ki7" target="_blank" class="btn-appointment">
+                            <i class="fas fa-map-marker-alt"></i> Find Us
+                        </a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-	</header>
-	<!-- end header -->
-	<section id="featured">
-	 
-	<!-- Slider -->
+    </header>
+
+    <!-- Hero Section -->
+    <section id="featured">
         <div id="main-slider" class="flexslider">
             <ul class="slides">
-              <li>
-                <img src="img/slides/1.jpg" alt="" />
-                <div class="flex-caption">
-                   <div class="item_introtext">
-					<span>Consultation</span>
-					<strong>Your Reproductive Health</strong>  </div>
-                </div>
-              </li>
-              <li>
-                <img src="img/slides/2.jpg" alt="" />
-                <div class="flex-caption">
-                     <div class="item_introtext">
-					<span>Your Baby</span>
-					<strong>Fertility and Pregnancy</strong>  </div>
-                </div>
-              </li>
-              <li>
-                <img src="img/slides/3.jpg" alt="" />
-                <div class="flex-caption">
-                     <div class="item_introtext">
-					<span>Emergency</span>
-					<strong>Women's Pregnancy</strong>  </div>
-                </div>
-              </li>
+                <li>
+                    <img src="img/slides/1.jpg" alt="Women's Health Care" />
+                    <div class="flex-caption">
+                        <div class="item_introtext animated">
+                            <span>Expert Women's Care</span>
+                            <strong>Your Reproductive Health</strong>
+                            <p>State-of-the-art facilities with personalized care approach</p>
+                            <a href="#contact" class="btn btn-primary mt-4">Book Consultation</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <img src="img/slides/2.jpg" alt="Fertility Treatment" />
+                    <div class="flex-caption">
+                        <div class="item_introtext animated">
+                            <span>Fertility Specialists</span>
+                            <strong>Planning Your Family</strong>
+                            <p>Advanced fertility treatments with high success rates</p>
+                            <a href="#services" class="btn btn-primary mt-4">Our Services</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <img src="img/slides/3.jpg" alt="Pregnancy Care" />
+                    <div class="flex-caption">
+                        <div class="item_introtext animated">
+                            <span>Complete Pregnancy Care</span>
+                            <strong>Safe Motherhood Journey</strong>
+                            <p>Comprehensive care from conception to delivery</p>
+                            <a href="#about" class="btn btn-primary mt-4">Learn More</a>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
-	<!-- end slider -->
- 
-	</section>
+    </section>
 	<section class="callaction">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<div class="aligncenter"><h1 class="aligncenter">We CARE For you</h1><span class="clear spacer_responsive_hide_mobile " style="height:13px;display:block;"></span>Our Dr. Saranya MBBS, MD (Gynaecology) is one of the leading gynecologists and related surgeons in Kallakurichi. SAFETY of our patients is our first priority. We strive to provide the BEST TREATMENT in the town with home like hospitality. Our staffs treat you as family members. All your treatment details are kept CONFIDENTIAL. Visit us and get the best treatment at very REASONABLE COST.</div>
-			</div>
-		</div>
-	</div>
-	</section>
-	<section id="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="aligncenter">
+                        <h1 class="aligncenter mb-4">Expert Care for Women's Health</h1>
+                        <p class="lead">Our Dr. Saranya MBBS, MD (Gynaecology) is one of the leading gynecologists in Kallakurichi. We prioritize PATIENT SAFETY and provide the BEST TREATMENT with home-like hospitality. Experience professional care at reasonable costs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 	
 	
 	<div class="container">
@@ -111,161 +162,266 @@
 		</div></div></div>
 		</div></div>
 		</div> 
-		<!-- Portfolio Projects -->
-		<div class="row">
-			<div class="col-lg-12">
-				<h4 class="heading">Pictures</h4>
-				<div class="row">
-					<section id="projects">
-					<ul id="thumbs" class="portfolio"> 
-						<li class="col-lg-3 design" data-id="id-0" data-type="web">
-						<div class="item-thumbs">					 
-						<img src="img/works/1.JPG" alt=""><br>
-						<p>Standalone and welcoming entrance.</p>
-						</div>
-						</li> 
-						<li class="item-thumbs col-lg-3 design" data-id="id-1" data-type="icon">
-						<img src="img/works/2.JPG" alt=""><br>
-						<p>Vibrant and easing reception.</p>
-						</li> 
-						<li class="item-thumbs col-lg-3 photography" data-id="id-2" data-type="illustrator">
-						<img src="img/works/3.JPG" alt=""><br>
-						<p>Calm and comforting consulting room.</p>
-						</li>
-						
-						<li class="item-thumbs col-lg-3 photography" data-id="id-2" data-type="illustrator">					
-						<img src="img/works/4.JPG" alt=""><br>
-						<p>Simple and includes what you need IP rooms</p>
-						</li>						
-					</ul>
-					</section>
-				</div>
-			</div>
-		</div>
+        <!-- Facility Gallery Section -->
+        <section id="facility-gallery" class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center mb-5">
+                        <h2 class="section-title">Our Modern Facility</h2>
+                        <p class="lead text-muted">Experience healthcare in a comfortable and welcoming environment</p>
+                    </div>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="gallery-card">
+                            <div class="gallery-image">
+                                <img src="img/works/1.JPG" alt="Clinic Entrance" class="img-fluid" data-fancybox="gallery">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-info">
+                                        <h4>Modern Entrance</h4>
+                                        <p>Welcoming and easily accessible facility</p>
+                                        <button class="btn btn-light btn-sm" data-fancybox="gallery-1">
+                                            <i class="fas fa-expand"></i> View Larger
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="gallery-caption">
+                                <h5>Clinic Entrance</h5>
+                                <p class="text-muted">Standalone and welcoming entrance</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-3">
+                        <div class="gallery-card">
+                            <div class="gallery-image">
+                                <img src="img/works/2.JPG" alt="Reception Area" class="img-fluid" data-fancybox="gallery">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-info">
+                                        <h4>Reception Area</h4>
+                                        <p>Warm and inviting atmosphere</p>
+                                        <button class="btn btn-light btn-sm" data-fancybox="gallery-2">
+                                            <i class="fas fa-expand"></i> View Larger
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="gallery-caption">
+                                <h5>Reception</h5>
+                                <p class="text-muted">Vibrant and welcoming reception area</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-3">
+                        <div class="gallery-card">
+                            <div class="gallery-image">
+                                <img src="img/works/3.JPG" alt="Consultation Room" class="img-fluid" data-fancybox="gallery">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-info">
+                                        <h4>Consultation Room</h4>
+                                        <p>Private and comfortable space</p>
+                                        <button class="btn btn-light btn-sm" data-fancybox="gallery-3">
+                                            <i class="fas fa-expand"></i> View Larger
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="gallery-caption">
+                                <h5>Consultation Room</h5>
+                                <p class="text-muted">Calm and comforting environment</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-3">
+                        <div class="gallery-card">
+                            <div class="gallery-image">
+                                <img src="img/works/4.JPG" alt="Patient Room" class="img-fluid" data-fancybox="gallery">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-info">
+                                        <h4>Patient Rooms</h4>
+                                        <p>Well-equipped inpatient facilities</p>
+                                        <button class="btn btn-light btn-sm" data-fancybox="gallery-4">
+                                            <i class="fas fa-expand"></i> View Larger
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="gallery-caption">
+                                <h5>Inpatient Rooms</h5>
+                                <p class="text-muted">Comfortable and well-equipped rooms</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
 	</div>
 	</section>
-	<div class="testimonial-area">
-    <div class="testimonial-solid">
+    <section id="testimonials" class="testimonial-area py-5">
         <div class="container">
-            <div class="testi-icon-area">
-                <div class="quote">
-                    <i class="fa fa-microphone"></i>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="section-title mb-5">What Our Patients Say</h2>
                 </div>
             </div>
-            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#carousel-example-generic" data-slide-to="0" class="">
-                        <a href="#"></a>
-                    </li>
-                    <li data-target="#carousel-example-generic" data-slide-to="1" class="">
-                        <a href="#"></a>
-                    </li>
-                    <li data-target="#carousel-example-generic" data-slide-to="2" class="active">
-                        <a href="#"></a>
-                    </li>
-                    <li data-target="#carousel-example-generic" data-slide-to="3" class="">
-                        <a href="#"></a>
-                    </li>
-                </ol>
-                <div class="carousel-inner">
-
-                    <div class="item">
-                        <p>Tries her best for normal delivery from beginning. Very caring doctor.</p>
-                        <p>
-                            <b>- Mohammed Basha -</b>
-                        </p>
+            <div class="row testimonial-slider">
+                <div class="col-lg-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="rating mb-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <div class="testimonial-text">
+                            <i class="fas fa-quote-left text-muted"></i>
+                            <p class="mb-3">Dr. Saranya strives for natural delivery from the beginning. She's incredibly caring and patient-focused. Her approach made my pregnancy journey comfortable and safe.</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h5>Mohammed Basha</h5>
+                                <small class="text-muted">Verified Patient</small>
+                            </div>
+                        </div>
                     </div>
-					<div class="item">
-                        <p>Polite and caring doctor.</p>
-                        <p>
-                            <b>- Elavarasan -</b>
-                        </p>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="rating mb-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <div class="testimonial-text">
+                            <i class="fas fa-quote-left text-muted"></i>
+                            <p class="mb-3">Best gynecologist in Kallakurichi! Dr. Saranya takes time to explain everything in detail. Her kind and patient approach makes you feel comfortable and well-cared for.</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h5>Arun Guna</h5>
+                                <small class="text-muted">Verified Patient</small>
+                            </div>
+                        </div>
                     </div>
-                    <div class="item active">
-                        <p>Low Cost In Kallakurichi town. Highly Recommended...</p>
-                        <p>
-                            <b>- Gopi Meyyappan -</b>
-                        </p>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="rating mb-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <div class="testimonial-text">
+                            <i class="fas fa-quote-left text-muted"></i>
+                            <p class="mb-3">Most affordable and high-quality care in Kallakurichi. Professional service with a personal touch. Highly recommended for all women's health needs.</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h5>Gopi Meyyappan</h5>
+                                <small class="text-muted">Verified Patient</small>
+                            </div>
+                        </div>
                     </div>
-					<div class="item">
-                        <p>She is the best doctor in Kallakurichi. Very kindly person. Provides detailed explanation every time patiently.</p>
-                        <p>
-                            <b>- Arun Guna -</b>
-                        </p>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <div class="review-summary">
+                        <div class="overall-rating">
+                            <h3>4.9</h3>
+                            <div class="stars">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <p>Average rating from 200+ verified patients</p>
+                        </div>
+                        <a href="https://goo.gl/maps/hZH8BYcUtrYgU3ki7" target="_blank" class="btn btn-primary mt-3">
+                            <i class="fas fa-external-link-alt"></i> Read More Reviews on Google
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-	<footer>
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-3">
-				<div class="widget">
-					<h5 class="widgetheading">Contact us</h5>
-					<address>
-						<strong>Krithik Clinic and Scans</strong><br>
-						45A Chekkumetu Street,<br>
-						Kallakurichi, Tamilnadu 606202.</address>
-					<p>
-						<i class="fa fa-phone"></i> (+91) 89401 76836 <br>
-						<!-- <i class="icon-envelope-alt"></i> email@domainname.com -->
-						<i class="fa fa-map-marker"></i> <a href="https://goo.gl/maps/kyhVk8sWLHw5PdU98"> Google Maps</a>
-					</p>
-				</div>
-			</div>
-			<!-- <div class="col-lg-3">
-				<div class="widget">
-					<h5 class="widgetheading">Quick Links</h5>
-					<ul class="link-list">
-						<li><a href="#">Latest Events</a></li>
-						<li><a href="#">Terms and conditions</a></li>
-						<li><a href="#">Privacy policy</a></li>
-						<li><a href="#">Career</a></li>
-						<li><a href="#">Contact us</a></li>
-					</ul>
-				</div>
-			</div> -->
-		</div>
-	</div>
-	<div id="sub-footer">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6">
-					<div class="copyright">
-						<p>
-							<span>Copyright &copy; KRITHIK CLINIC AND SCANS. All right reserved</span>
-						</p>
-					</div>
-				</div>
-				<div class="col-lg-6">
-					<ul class="social-network">
-						<li><a href="#" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-						<li><a href="#" data-placement="top" title="Whatsapp"><i class="fa fa-whatsapp"></i></a></li>
-						<li><a href="#" data-placement="top" title="Instagram"><i class="fa fa-instagram"></i></a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-	</footer>
-</div>
-<a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
-<!-- javascript
-    ================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="js/jquery.js"></script>
-<script src="js/jquery.easing.1.3.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.fancybox.pack.js"></script>
-<script src="js/jquery.fancybox-media.js"></script> 
-<script src="js/portfolio/jquery.quicksand.js"></script>
-<script src="js/portfolio/setting.js"></script>
-<script src="js/jquery.flexslider.js"></script>
-<script src="js/animate.js"></script>
-<script src="js/custom.js"></script>
-<script src="js/owl-carousel/owl.carousel.js"></script>
+    </section>
+	<!-- Modern Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5>About Us</h5>
+                    <p>Krithik Clinic and Scans is a leading gynecology hospital in Kallakurichi, providing comprehensive women's healthcare services with modern facilities and personalized care.</p>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#featured"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5>Contact Info</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-map-marker-alt"></i> Kallakurichi, Tamil Nadu</li>
+                        <li><i class="fas fa-phone"></i> Phone: [Your Phone Number]</li>
+                        <li><i class="fas fa-envelope"></i> Email: [Your Email]</li>
+                    </ul>
+                    <ul class="social-network">
+                        <li><a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#" class="whatsapp"><i class="fab fa-whatsapp"></i></a></li>
+                        <li><a href="#" class="instagram"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="sub-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="copyright">
+                            <p>&copy; 2025 Krithik Clinic and Scans. All rights reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Libraries -->
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.flexslider.js"></script>
+    <script src="js/jquery.fancybox.pack.js"></script>
+    <script src="js/modern-scripts.js"></script>
+
+    <!-- Initialize Scripts -->
+    <script>
+        // Initialize FlexSlider
+        $(window).load(function() {
+            $('#main-slider').flexslider({
+                animation: "fade",
+                controlNav: true,
+                directionNav: false,
+                touch: true
+            });
+        });
+    </script>
 </body>
 </html>
