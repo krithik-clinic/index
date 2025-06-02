@@ -18,6 +18,7 @@
     <!-- CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/custom-modern.css" rel="stylesheet" />
+    <link href="css/header-modern.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
     <link href="css/flexslider.css" rel="stylesheet" />
     
@@ -52,33 +53,44 @@
 <div id="wrapper">
     <!-- Header -->
     <header class="fixed-top">
-        <div class="navbar navbar-default navbar-static-top">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
             <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-					<a class="navbar-brand" href="index.html">						
-						<h1 class="site-title d-inline-block ms-2 mb-0">
-							Krithik Clinic and Scans
-						</h1>
-					</a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav ms-auto">
-                        <li class="active"><a href="#featured">Home</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li><a href="https://goo.gl/maps/hZH8BYcUtrYgU3ki7" target="_blank" class="btn-appointment">
-                            <i class="fas fa-map-marker-alt"></i> Find Us
-                        </a></li>
+                <a class="navbar-brand text-primary fw-bold" href="index.html">
+                    Krithik Clinic and Scans
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" 
+                    aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarMain">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#featured">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#services">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#facility-gallery">Our Facility</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#testimonials">Testimonials</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                        <li class="nav-item ms-lg-3">
+                            <a href="https://goo.gl/maps/hZH8BYcUtrYgU3ki7" target="_blank" 
+                               class="btn btn-primary rounded-pill shadow-sm">
+                                <i class="fas fa-map-marker-alt me-2"></i>Find Us
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
-        </div>
+        </nav>
     </header>
 
     <!-- Hero Section -->
@@ -135,7 +147,7 @@
     </section>
 
 	
-	
+	<section id="services" class="services-area py-5"></section>
 	<div class="container">
 		<div class="row">
 		<div class="skill-home"> <div class="skill-home-solid clearfix"> 
@@ -382,11 +394,11 @@
                         <li><i class="fas fa-phone"></i> Phone: [Your Phone Number]</li>
                         <li><i class="fas fa-envelope"></i> Email: [Your Email]</li>
                     </ul>
-                    <ul class="social-network">
-                        <li><a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#" class="whatsapp"><i class="fab fa-whatsapp"></i></a></li>
-                        <li><a href="#" class="instagram"><i class="fab fa-instagram"></i></a></li>
-                    </ul>
+					<div class="social-network d-flex">
+						<a href="#" class="facebook me-4"><i class="fab fa-facebook-f fa-2x"></i></a>
+						<a href="#" class="whatsapp me-4"><i class="fab fa-whatsapp fa-2x"></i></a>
+						<a href="#" class="instagram"><i class="fab fa-instagram fa-2x"></i></a>
+					</div>
                 </div>
             </div>
         </div>
@@ -404,9 +416,10 @@
     </footer>
 
     <!-- JavaScript Libraries -->
-    <script src="js/jquery.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     <script src="js/jquery.easing.1.3.js"></script>
-    <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.flexslider.js"></script>
     <script src="js/jquery.fancybox.pack.js"></script>
     <script src="js/modern-scripts.js"></script>
@@ -414,13 +427,28 @@
     <!-- Initialize Scripts -->
     <script>
         // Initialize FlexSlider
-        $(window).load(function() {
+        $(window).on('load', function() {
             $('#main-slider').flexslider({
                 animation: "fade",
                 controlNav: true,
                 directionNav: false,
                 touch: true
             });
+        });
+
+        // Sticky Header
+        $(window).scroll(function() {
+            if ($(window).scrollTop() > 100) {
+                $('.navbar').addClass('sticky');
+            } else {
+                $('.navbar').removeClass('sticky');
+            }
+        });
+
+        // Active menu item
+        $('.nav-link').on('click', function() {
+            $('.nav-link').removeClass('active');
+            $(this).addClass('active');
         });
     </script>
 </body>
