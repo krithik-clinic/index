@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeLazyLoading();
     // Handle navbar transparency
     handleNavbarTransparency();
+    // Initialize hero slider
+    initializeHeroSlider();
 
     // Handle navbar scroll behavior
     const navbar = document.querySelector('.navbar');
@@ -21,15 +23,6 @@ document.addEventListener('DOMContentLoaded', function() {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
-        }
-        
-        // Hide/show navbar on scroll
-        if (currentScroll > lastScroll && currentScroll > 500) {
-            navbar.classList.add('scroll-down');
-            navbar.classList.remove('scroll-up');
-        } else {
-            navbar.classList.remove('scroll-down');
-            navbar.classList.add('scroll-up');
         }
         
         lastScroll = currentScroll;
@@ -176,12 +169,39 @@ function handleNavbarTransparency() {
     });
 }
 
-// Add WhatsApp floating button if needed
-function addWhatsAppButton() {
-    const button = document.createElement('a');
-    button.href = 'https://wa.me/yourphonenumber';
-    button.className = 'floating-whatsapp';
-    button.innerHTML = '<i class="fab fa-whatsapp"></i>';
-    button.target = '_blank';
-    document.body.appendChild(button);
+// Initialize hero slider with enhanced functionality
+function initializeHeroSlider() {
+    $('#main-slider').flexslider({
+        animation: "slide",
+        controlNav: true,
+        directionNav: true,
+        animationSpeed: 1000,
+        slideshowSpeed: 5000,
+        pauseOnHover: true,
+        prevText: '<i class="fas fa-chevron-left"></i>',
+        nextText: '<i class="fas fa-chevron-right"></i>',
+        start: function(slider) {
+            // Add active class to first slide
+            slider.slides.eq(slider.currentSlide).addClass('active');
+        },
+        before: function(slider) {
+            // Remove active class from all slides
+            slider.slides.removeClass('active');
+        },
+        after: function(slider) {
+            // Add active class to current slide
+            slider.slides.eq(slider.currentSlide).addClass('active');
+        }
+    });
 }
+
+
+function toggleFullscreen(btn) {
+    const img = btn.closest('.gallery-image').querySelector('img');
+    if (!document.fullscreenElement) {
+        img.requestFullscreen();
+    } else {
+        document.exitFullscreen();
+    }
+}
+

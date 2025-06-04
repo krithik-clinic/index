@@ -2,6 +2,26 @@
     padding: 1rem 0;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+    background-color: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    transform: none !important;
+}
+
+.navbar.sticky {
+    padding: 0.5rem 0;
+    background-color: rgba(255, 255, 255, 0.98) !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    transform: none !important;
+}
+
+/* Add padding to body to prevent content from hiding under fixed navbar */
+body {
+    padding-top: 76px; /* Adjust this value based on your navbar height */
 }
 
 .navbar-brand {
@@ -13,8 +33,14 @@
     letter-spacing: -0.5px;
 }
 
+/* Smooth transition for navbar items */
 .nav-item {
     margin: 0 0.5rem;
+    transition: transform 0.2s ease;
+}
+
+.nav-item:hover {
+    transform: translateY(-1px);
 }
 
 .nav-link {
@@ -22,22 +48,53 @@
     font-weight: 500;
     color: #333 !important;
     padding: 0.5rem 1rem !important;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
 .nav-link:hover,
 .nav-link.active {
-    color: #0056b3 !important;
+    color: var(--primary-color) !important;
 }
 
-.btn-primary {
-    padding: 0.5rem 1.5rem;
-    font-weight: 500;
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
 }
 
-/* Sticky header behavior */
-.navbar.sticky {
-    padding: 0.5rem 0;
-    background: rgba(255,255,255,0.95) !important;
-    backdrop-filter: blur(10px);
+.nav-link:hover::after,
+.nav-item.active .nav-link::after {
+    width: 80%;
+}
+
+/* Mobile navigation adjustments */
+@media (max-width: 991.98px) {
+    .navbar {
+        padding: 0.5rem 0;
+    }
+    
+    .navbar-collapse {
+        background: white;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        margin-top: 0.5rem;
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+    }
+
+    .nav-item {
+        margin: 0.25rem 0;
+    }
+
+    body {
+        padding-top: 66px; /* Slightly smaller padding for mobile */
+    }
 }
