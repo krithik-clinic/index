@@ -62,24 +62,61 @@
 
     <!-- Initialize Scripts -->
     <script>
-        // Sticky Header
+        // Header scroll behavior
+        let lastScroll = 0;
         $(window).scroll(function () {
-            if ($(window).scrollTop() > 100) {
-                $('.navbar').addClass('sticky');
+            const currentScroll = $(window).scrollTop();
+            const navbar = $('.navbar');
+            
+            // Add/remove sticky class
+            if (currentScroll > 100) {
+                navbar.addClass('sticky');
             } else {
-                $('.navbar').removeClass('sticky');
+                navbar.removeClass('sticky');
             }
+            
+            // Handle scroll direction
+            if (currentScroll > lastScroll && currentScroll > 200) {
+                navbar.addClass('scroll-down').removeClass('scroll-up');
+            } else {
+                navbar.addClass('scroll-up').removeClass('scroll-down');
+            }
+            
+            lastScroll = currentScroll;
+            
+            // Update active menu item based on scroll position
+            $('section').each(function() {
+                const sectionTop = $(this).offset().top - 100;
+                const sectionBottom = sectionTop + $(this).outerHeight();
+                
+                if (currentScroll >= sectionTop && currentScroll < sectionBottom) {
+                    const sectionId = $(this).attr('id');
+                    $('.nav-link').removeClass('active');
+                    $(`.nav-link[href="#${sectionId}"]`).addClass('active');
+                }
+            });
         });
 
-        // Active menu item
-        $('.nav-link').on('click', function () {
-            $('.nav-link').removeClass('active');
-            $(this).addClass('active');
+        // Handle menu item clicks
+        $('.nav-link').on('click', function (e) {
+            e.preventDefault();
+            const target = $($(this).attr('href'));
+            if (target.length) {
+                const offset = $('.navbar').outerHeight();
+                $('html, body').animate({
+                    scrollTop: target.offset().top - offset
+                }, 1000);
+                
+                // Handle mobile menu
+                $('.navbar-collapse').collapse('hide');
+            }
         });
 
         // Initialize Hero Slider on page load
         $(window).on('load', function () {
             initializeHeroSlider();
+            // Set initial active menu item
+            $(window).trigger('scroll');
         });
     </script>
 </head>
@@ -89,24 +126,17 @@
         <!-- Header -->
         <header class="fixed-top">
             <nav class="navbar navbar-expand-lg navbar-light bg-white">
-
-                <!-- <div class="container-fluid text-center">
-                    <a class="navbar-brand text-primary fw-bold fs-4 ms-3" href="index.html">
-                        <img src="img/logo_1.png" alt="Logo" width="20" height="20" class="me-1">
-                    </a>
-                </div> -->
-
                 <div class="container">
-                    <a class="navbar-brand text-primary fw-bold fs-4 ms-3" href="index.html">
-                        <!-- <img src="img/logo.png" alt="Logo" width="40" height="40" class="me-2 pe-2"> -->
-                        Krithik Clinic and Scans
-                    </a>
-
-                    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                    <button class="navbar-toggler border-0 d-lg-none" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false"
                         aria-label="Toggle navigation">
                         <i class="fas fa-bars"></i>
                     </button>
+
+                    <a class="navbar-brand text-primary fw-bold fs-3" href="index.html">
+                        <!-- <img src="img/logo.png" alt="Logo" width="40" height="40" class="me-2 pe-2"> -->
+                        Krithik Clinic and Scans
+                    </a>
 
                     <div class="collapse navbar-collapse" id="navbarMain">
                         <ul class="nav nav-pills ms-auto mb-2 mb-lg-0">
@@ -125,11 +155,8 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="#sub-footer">Contact</a>
                             </li>
-                            <li class="nav-item ms-lg-3">
-                                <a href="https://goo.gl/maps/hZH8BYcUtrYgU3ki7" target="_blank"
-                                    class="btn btn-primary rounded-pill shadow-sm">
-                                    <i class="fas fa-map-marker-alt me-2"></i>Find Us
-                                </a>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://goo.gl/maps/hZH8BYcUtrYgU3ki7" target="_blank">Map</a>
                             </li>
                         </ul>
                     </div>
